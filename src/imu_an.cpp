@@ -9,7 +9,7 @@
 #include "acc_lib/fitallan_acc.h"
 #include "gyr_lib/allan_gyr.h"
 #include "gyr_lib/fitallan_gyr.h"
-#include <code_utils/ros_utils.h>
+#include "ros_utils.h"
 #include <geometry_msgs/Vector3Stamped.h>
 #include <iostream>
 #include <mutex>
@@ -100,7 +100,7 @@ writeData3( const std::string sensor_name,
     out_y << std::setprecision( 10 );
     out_z << std::setprecision( 10 );
 
-    for ( int index = 0; index < gyro_ts_x.size( ); ++index )
+    for ( size_t index = 0; index < gyro_ts_x.size( ); ++index )
     {
         out_t << gyro_ts_x[index] << '\n';
         out_x << gyro_d_x[index] << '\n';
